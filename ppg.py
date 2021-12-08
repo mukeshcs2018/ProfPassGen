@@ -35,7 +35,7 @@ while(user_choice.lower() == 'y'):
 
     ui_numbers = int(input("How many numbers would you like?\n>> "))
 
-    password = ""
+    password = []
 
     for char in range(0,ui_letters):
         random_char = random.choice(letters)
@@ -49,8 +49,17 @@ while(user_choice.lower() == 'y'):
         random_num = random.choice(numbers)
         password += random_num
     
+    random.shuffle(password)
+
+    final_pass = ""
+
+    for char in range(0,len(password)):
+        final_pass += password[char] 
+
+
+    
     print("----------------------------------------------------------------")
-    print("Your final Password is here --> ",password)
+    print("Your final Password is here --> ",final_pass)
     print("----------------------------------------------------------------")
     print()
 
